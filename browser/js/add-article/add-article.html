@@ -1,0 +1,35 @@
+<div class='container'>
+
+  <div class="row">
+
+    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2">
+
+      <div class="box clearfix">
+
+        <h2>Write your article!</h2>
+
+        <div class="form-group">
+          <label for="title">Article Title</label><br/>
+          <input name="title" class="form-control" type="text" ng-model="article.title">
+        </div>
+        
+        
+          <oi-select oi-options="name for name in playerList | orderBy: name" ng-model="Sport.players" ng-disabled="disabled" ></oi-select>
+          <b>gets</b>
+          <p>
+          <input type="text" name="input" ng-model="amount">
+          </p>
+          <oi-select oi-options="stat for stat in statList" ng-model="stat.players"></oi-select>
+          <text-angular name="wysiwig-form" ng-model="article.content">
+          </text-angular>
+
+
+        
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
