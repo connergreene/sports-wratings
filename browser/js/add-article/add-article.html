@@ -20,13 +20,31 @@
           <input type="text" name="input" ng-model="amount">
           </p>
           <oi-select oi-options="stat for stat in statList" ng-model="stat.players"></oi-select> -->
-          <text-angular name="wysiwig-form" ng-model="article.content">
+          <!-- <text-angular name="wysiwig-form" ng-model="article.content">
           </text-angular>
+          <textarea ui-tinymce="tinyMceOptions" mentio mentio-typed-text="typedTerm"
+                            mentio-items="playerList | filter:label:typedTerm" ng-model='foo'
+                            mentio-iframe-element="iframeElement"></textarea> -->
 
-          <input type="text" mentio
-           mentio-typed-text="typedTerm"
-           mentio-items="people | filter:label:typedTerm"
-           ng-model="myval"/>
+        <div>
+            <div text-angular
+              ta-toolbar="[['h1','h2','h3','p','pre','quote'], ['bold', 'italics','underline', 'ul', 'ol','justifyLeft', 'justifyCenter', 'justifyRight', 'indent', 'outdent','html','insertImage', 'insertLink', 'insertVideo']]"
+              ng-model='article.content' ta-text-editor-setup='setup'>
+            </div>
+        </div>
+
+
+        <mentio-menu mentio-for="'htmlContent'"
+                    mentio-trigger-char="'@'"
+                    mentio-items="players"
+                    mentio-search="searchPeople(term)"
+                    mentio-select="getPeopleText(item)">
+        </mentio-menu>
+
+
+
+
+
 
 
 

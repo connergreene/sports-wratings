@@ -20,7 +20,7 @@ app.factory('NbaFactory', function($http) {
     				}
     			}
     			return "Player not found";
-    			
+
     		})
         	.then(null, err => console.error(err));
 	},
@@ -33,14 +33,15 @@ app.factory('NbaFactory', function($http) {
                 var arrNames = [];
                 for(var i = 0; i < arr.length; i++){
                     var player = arr[i];
-                    arrNames.push(player.player.text);
+
+                    arrNames.push({ label: player.player.text });
                 }
                 return arrNames;
-                
+
             })
             .then(null, err => console.error(err));
     }
-	
+
 	}
 
 })
