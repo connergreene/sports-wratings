@@ -12,19 +12,23 @@
           <label for="title">Article Title</label><br/>
           <input name="title" class="form-control" type="text" ng-model="article.title">
         </div>
-        
-        
-          <oi-select oi-options="name for name in playerList | orderBy: name" ng-model="Sport.players" ng-disabled="disabled" ></oi-select>
+
+
+          <!-- <oi-select oi-options="name for name in playerList | orderBy: name" ng-model="Sport.players" ng-disabled="disabled" ></oi-select>
           <b>gets</b>
           <p>
           <input type="text" name="input" ng-model="amount">
           </p>
-          <oi-select oi-options="stat for stat in statList" ng-model="stat.players"></oi-select>
+          <oi-select oi-options="stat for stat in statList" ng-model="stat.players"></oi-select> -->
           <text-angular name="wysiwig-form" ng-model="article.content">
           </text-angular>
 
+          <input type="text" mentio
+           mentio-typed-text="typedTerm"
+           mentio-items="people | filter:label:typedTerm"
+           ng-model="myval"/>
 
-        
+
 
       </div>
 

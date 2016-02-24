@@ -20,6 +20,11 @@ app.controller('nbaCtrl', function($scope, player, playerList){
         $scope.article = {};
         $scope.playerList = playerList;
         $scope.statList = ["points", "rebounds", "assists", "steals", "blocks"];
+        $scope.people = [
+    { label: 'Joe'},
+    { label: 'Mike'},
+    { label: 'Diane'}
+]
 
 
 });
