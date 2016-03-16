@@ -4,11 +4,13 @@ app.config(function ($stateProvider) {
         templateUrl: 'js/add-article/add-article.html',
     	  controller: 'nbaCtrl',
         resolve: {
-      			player: function(NbaFactory, $stateParams){
-      				return NbaFactory.getPlayerObj("lebron james");
-      			},
+      			// player: function(NbaFactory, $stateParams){
+      			// 	return NbaFactory.getPlayerObj("lebron james");
+      			// },
                 playerList: function(NbaFactory, $stateParams){
-                    return NbaFactory.getPlayerList();
+                    //return NbaFactory.getPlayerList();
+                    //test until can scrape data from web
+                    return [{label: "lebron James"}, {label: "victor oladipo" }]
                 }
         }
     });
@@ -16,9 +18,9 @@ app.config(function ($stateProvider) {
 
 
 
-app.controller('nbaCtrl', function($scope, player, playerList, $q){
+app.controller('nbaCtrl', function($scope, playerList, $q){
         $scope.article = {};
-        $scope.statList = ["points", "rebounds", "assists", "steals", "blocks"];
+        var statList = [{label: "points"}, {label: "rebounds"}, {label: "assists"}, {label: "steals"},{label: "blocks"}];
         $scope.setup = function(element) {
           element.attr('mentio', 'mentio');
           element.attr('mentio-typed-term', 'typedTerm');
@@ -28,7 +30,7 @@ app.controller('nbaCtrl', function($scope, player, playerList, $q){
 
         $scope.searchPeople = function(term) {
             $scope.players = playerList;
-            return playerList;
+            return;
         };
 
         $scope.getPeopleText = function(item) {
@@ -37,6 +39,11 @@ app.controller('nbaCtrl', function($scope, player, playerList, $q){
 
         $scope.getPeopleTextRaw = function(item) {
           return '[@' + item.name + '~' + item.id + ']';
+        };
+
+        $scope.searchStats = function(term) {
+            $scope.stats = statList;
+            return statList;
         };
 
 
