@@ -20,6 +20,8 @@ app.config(function ($stateProvider) {
 
 app.controller('nbaCtrl', function($scope, playerList, $q){
         $scope.article = {};
+        $scope.player = {};
+
         var statList = [{label: "points"}, {label: "rebounds"}, {label: "assists"}, {label: "steals"},{label: "blocks"}];
         $scope.setup = function(element) {
           element.attr('mentio', 'mentio');
@@ -30,7 +32,7 @@ app.controller('nbaCtrl', function($scope, playerList, $q){
 
         $scope.searchPeople = function(term) {
             $scope.players = playerList;
-            return;
+            return playerList;
         };
 
         $scope.getPeopleText = function(item) {
